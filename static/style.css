@@ -1029,9 +1029,9 @@ li.nav-item a:hover {
         margin: auto;
     }
     .reservetable a {
-        width: 58%;
-        height: 40px;
-        font-size: 20px;
+        width: auto;
+        height: auto;
+        font-size: 15px;
     }
     #contact {
         height: 350px;
