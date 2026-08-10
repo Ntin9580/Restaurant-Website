@@ -396,10 +396,6 @@ li.nav-item a:hover {
     box-shadow: 2px 2px 10px black;
 }
 
-:is(#dish1, #dish2, #dish3) {
-    border-right: 1px solid rgb(184, 150, 87);
-}
-
 .dish h2 {
     text-align: center;
     margin: 15px auto;
@@ -543,19 +539,21 @@ li.nav-item a:hover {
 }
 
 .bigimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 2px;
-    border: 1px solid black;
     width: 40%;
     height: 70%;
 }
 
 .smallimg {
-    border: 1px solid black;
     width: 20%;
     height: 70%;
 }
 
 .image img {
+    object-fit: cover;
     transition: transform .6s;
 }
 
@@ -565,21 +563,18 @@ li.nav-item a:hover {
 }
 
 #image1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+    width: 99%;
+    height: 99%;
 }
 
 #image2 {
     width: 100%;
     height: 50%;
-    margin-bottom: 2px;
 }
 
 #image2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+    width: 99%;
+    height: 99%;
 }
 
 .image img:hover {
@@ -592,9 +587,8 @@ li.nav-item a:hover {
 }
 
 #image3 img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+    width: 99%;
+    height: 99%;
 }
 
 #section6 {
@@ -887,9 +881,9 @@ li.nav-item a:hover {
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 150px;
+        margin-bottom: 80px;
         margin-top: 0px;
-        height: 400px;
+        height: 350px;
         background-color: #fffdf5;
         box-shadow: 2px 2px 8px black;
         border-radius: 15px;
@@ -937,7 +931,7 @@ li.nav-item a:hover {
     width: 50%;
     }
     #section2 {
-        width: 80%;
+        width: 95%;
         height: auto;
         margin: 50px auto;
     }
@@ -949,11 +943,11 @@ li.nav-item a:hover {
     }
     .dishes {
         width: 100%;
-        height: 300px;
+        height: 250px;
     }
     .dish {
-        height: 200px;
-        width: 25%;
+        height: 220px;
+        width: 30%;
     }
     .dish h2 {
         font-size: 25px;
@@ -997,8 +991,8 @@ li.nav-item a:hover {
         object-fit: cover;
     }
     #section4 {
-        height: 450px;
-        width: 80%;
+        height: 400px;
+        width: 90%;
         margin: 50px auto;
     }
     #section4 h1 {
@@ -1016,6 +1010,12 @@ li.nav-item a:hover {
     #section5 {
         height: auto;
         margin-bottom: 50px;
+    }
+    .bigimg {
+        width: 60%;
+    }
+    .smallimg {
+        width: 30%;
     }
     #section6 {
         height: 350px;
@@ -1045,7 +1045,7 @@ li.nav-item a:hover {
         font-size: 15px;
     }
     #contact {
-        height: 350px;
+        height: 300px;
     }
     .contact {
         height: 330px;
