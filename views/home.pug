@@ -1,0 +1,114 @@
+extends base.pug
+
+block scripts
+  script(src='/static/index.js')
+
+block style
+    style
+        include ../static/style.css
+
+block content
+    .container1 
+      #herosection
+        #navigation
+            .logo
+                img(src="/static/images/dkl logo.png" alt="Hero Image")
+            #navbar
+            ul
+                li.nav-item
+                    a(href="#navigation") Home
+                li.nav-item
+                    a(href="#section1") About
+                li.nav-item
+                    a(href="#section2") Menu
+                li.nav-item
+                    a(href="#contact") Contact
+        #section
+          .hero
+            h1 A TASTE WORTH REMEMBERING.
+            div.linehero
+            p Authentic flavours, unforgettable...
+            .exploremenu
+                a(href="") Explore Menu ➔
+          .heroimage
+            img(src="/static/images/hero.jpg" alt="Hero Image")
+      #section1 
+        .box1
+            img(src="/static/images/rest photo.jpeg" alt="Hero Image")
+        .box2
+          h1 Our Story
+          div.linesec1
+          h2 More than just a Meal...
+          a(href="") Our Story ➔
+          
+      #section2
+        .signmenu
+            h1 SIGNATURE MENU
+            h2 OUR FAVOURITE DISHES
+        .dishes
+            .dish#dish1
+                .dishimg
+                    img(src="/static/images/dish1.jpeg" alt="Hero Image")
+                h2 Dish 1
+                p Price: ---
+            .dish#dish2
+                .dishimg
+                    img(src="/static/images/dish2.jpeg" alt="Hero Image")
+                h2 Dish 2
+                p Price: ---
+            .dish#dish3
+                .dishimg
+                    img(src="/static/images/dish3.jpeg" alt="Hero Image")
+                h2 Dish 3
+                p Price: ---
+      #section3
+        .featuretext
+            h1 GOOD FOOD BRINGS PEOPLE TOGETHER. 
+        .featureimg
+            img(src="/static/images/resimg.jpeg" alt="Hero Image")
+      #section4
+        h1 WHY PEOPLE COME BACK
+        .whyus
+            .card#card1
+                p ✦
+                h2 FRESH INGREDIENTS 
+                p Here you can add content related to ingredients which you used in your food
+            .card#card2
+                p ✦
+                h2 AUTHENTIC FLAVOURS
+                p Here you can add content related to flavours you used in your food
+            .card#card3
+                p ✦
+                h2 WARM HOSPITALITY
+                p Here you can add content related to your kindness or how you serve your custumors
+      #section5
+        .bigimg
+            .image#image1
+                img(src="/static/images/gallery1.jpeg" alt="Hero Image")
+        .smallimg
+            .image#image2
+                img(src="/static/images/gallery2.jpeg" alt="Hero Image")
+            .image#image3
+                img(src="/static/images/gallery3.jpeg" alt="Hero Image")
+      #section6
+        h1 YOUR TABLE IS WAITING. 
+        h2 Make your next meal memorable. 
+        .reservetable
+            a(href="")  RESERVE A TABLE
+      #contact 
+        .contact
+            .rest
+                h2 Duman Sky Lounge
+                p Come visit us, enjoy a meal, and make yourself at home.
+            .links
+                h2 Quick Links
+                p
+                    a(href="#navigation")  HOME
+                    a(href="#section2")  MENU
+                    a(href="https://share.google/kuRWCGfLp4yMqKQg7") Visit Restaurant
+            .findus
+                h2 Find Us
+                p 113/168, above Shor Lounge, Chat Chauraha, Khalasi Line, Swaroop Nagar, Kanpur, Uttar Pradesh
+                p ✆ 9119600163
+        .footer
+            p  © 2026 DUMAN. All rights reserved.
