@@ -8,58 +8,49 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 15px;
 }
 
 div.container1 {
     background-color: rgb(248, 247, 244);
-    width: 100%;
-    animation: start 3s 1 ease-in-out;
-    opacity: 1;
-}
-
-/* @keyframes start {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-} */
-
-div.linehero {
-    width: 15%;
-    margin-left: 80px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    height: 2px;
-    background-color: rgb(184, 150, 87);
-}
-
-div.linesec1 {
-    width: 15%;
-    margin-left: 150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 2px;
-    background-color: rgb(184, 150, 87);
-}
-
-#navigation {
-    position: -webkit-sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
     width: 100vw;
-    height: 75px;
-    margin-bottom: 50px;
-    background: #fffef9;
-    backdrop-filter: blur(15px);
-    transition: transform 1s cubic-bezier(.17, .67, .83, .67);
-    animation: nav 1s 1;
+    height: 100vh;
+    animation: start 3s 1 ease-in-out;
+}
+
+#herosection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#herosection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url(/static/images/contimg4.jpg) no-repeat center center/cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: herosection 1s forwards;
+    animation-delay: 9s;
+    box-shadow: 0px -10px 10px 10px black;
+    border-bottom-left-radius: 5px;
     will-change: transform;
 }
 
-@keyframes nav {
+@keyframes herosection {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes ul {
     from {
         transform: translateY(-75px);
     }
@@ -69,52 +60,195 @@ div.linesec1 {
     }
 }
 
-.logo {
-    width: 5%;
-    height: 80%;
-    margin: auto 30px;
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-#navbar {
-    width: 60%;
-    float: right;
-}
-
-#section {
-    display: flex;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.hero {
-    will-change: transform;
-    margin: auto;
-    background-color: rgb(243, 232, 232);
-    width: 35%;
-    height: 65vh;
-    transition: transform 1s cubic-bezier(.17, .67, .83, .67);
-    animation: slide 1s 1;
-}
-
-li.nav-item a::before {
+li#home a::before {
     content: "";
     position: absolute;
     bottom: -7px;
     left: 0;
-    width: 0;
-    height: 3px;
+    width: 100%;
+    height: 1px;
     background: black;
+    animation: home .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 3.7s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-800px);
 }
 
-li.nav-item a:hover::before {
+@keyframes home {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#about a::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    animation: about .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 4s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-900px);
+}
+
+@keyframes about {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#menu a::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    animation: menua .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 4.3s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-1000px);
+}
+
+@keyframes menu {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#navcontact a::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    animation: navcontact .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 4.6s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-1000px);
+}
+
+@keyframes navcontact {
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* li.nav-item a:hover::before {
     animation: left .3s forwards;
-    transform-origin: left;
+    } */
+ul {
+    width: 50%;
+    background: rgb(212, 179, 113);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(212, 179, 113);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 2px 2px 10px black;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: nav 1s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: .5s;
+    transition: transform;
+    will-change: transform;
+    transform: translateY(-100px);
+}
+
+@keyframes nav {
+    to {
+        transform: translateY(0);
+    }
+}
+
+li.nav-item {
+    margin: 1rem auto;
+    list-style: none;
+}
+
+li#home {
+    animation: home 1s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 1.5s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-800px);
+}
+
+@keyframes home {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#about {
+    animation: about .5s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 2.5s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-900px);
+}
+
+@keyframes about {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#menu {
+    animation: menua .4s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 3s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-1000px);
+}
+
+@keyframes menua {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#navcontact {
+    animation: navcontact .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 3.4s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-1000px);
+}
+
+@keyframes navcontact {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li.nav-item a {
+    text-decoration: none;
+    padding: 0px 0px;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: black;
+    position: relative;
+}
+
+@keyframes nava {
+    to {
+        transform: translateX(0);
+    }
 }
 
 @keyframes left {
@@ -125,142 +259,139 @@ li.nav-item a:hover::before {
 }
 
 #herosection {
-    width: 100vw;
-    height: 100vh;
-    margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 3rem;
+}
+
+#section {
+    width: 50%;
+    height: 70%;
+    margin-bottom: 1.5rem;
+}
+
+.hero {
+    will-change: transform;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+div.linehero {
+    width: 15%;
+    margin-left: 3rem;
+    margin-top: .8rem;
+    margin-bottom: 2rem;
+    height: 2px;
+    background-color: rgb(184, 150, 87);
+    animation: heroline .5s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 8.5s;
+    transform: translateX(-1000px);
+    will-change: transform;
+}
+
+@keyframes heroline {
+    to {
+        transform: translateX(0);
+    }
 }
 
 .hero h1 {
     color: black;
-    width: 60%;
     font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 50px;
-    margin-left: 80px;
-    margin-top: 20px;
+    font-size: 4.5rem;
+    margin-top: .5rem;
+    margin-left: 3rem;
+    animation: typing 2s steps(17) forwards;
+    animation-delay: 6.5s;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+@keyframes typing {
+    to {
+        width: 17ch;
+    }
 }
 
 .hero p {
+    text-align: center;
     color: black;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
-    font-weight: 350;
+    font-weight: 400;
     font-style: normal;
-    font-size: 18px;
-    margin-left: 80px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
     width: 50%;
+    animation: p .5s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 5.5s;
+    transform: translateX(-1000px);
+    will-change: transform;
+}
+
+@keyframes p {
+    to {
+        transform: translateX(0);
+    }
 }
 
 .hero a {
     text-decoration: none;
-    padding: 7px 15px;
-    font-family: 'Poppins', sans-serif;
+    padding: 10px 18px;
+    font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    font-size: 1.3rem;
     background-color: rgb(184, 150, 87);
-    margin-left: 80px;
+    margin-left: 3rem;
     color: black;
     box-shadow: 2px 2px 10px black;
 }
 
-.heroimage {
-    width: 50%;
-    height: 70vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@keyframes slide {
-    from {
-        transform: translateX(-600px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-
-}
-
-@keyframes slideimg {
-    from {
-        transform: translateX(800px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-
-}
-
-.heroimage img {
+.exploremenu {
+    animation: a .5s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 6s;
+    transform: translateX(-1000px);
     will-change: transform;
-    transform-origin: right;
-    transition: transform 1s cubic-bezier(.17, .67, .83, .67);
-    animation: slideimg 1s 1;
-    aspect-ratio: 1.35 / 1;
-    width: 85%;
-    height: 85%;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 2px 2px 10px black;
 }
 
-ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 80px;
-}
-
-li.nav-item {
-    width: 100px;
-    margin: 20px 35px;
-    list-style: none;
-}
-
-li.nav-item a {
-    text-decoration: none;
-    padding: 0px 0px;
-    font-family: 'Poppins', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-weight: 350;
-    font-style: normal;
-    color: black;
-    position: relative;
-}
-
-li.nav-item a:hover {
-    transform: scale(1.1);
-    color: rgb(212, 179, 113);
-
+@keyframes a {
+    to {
+        transform: translateX(0);
+    }
 }
 
 #section1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90vw;
-    height: 55vh;
+    width: 80%;
+    height: 400px;
+    box-shadow: 1px 1px 5px black;
+    margin: auto;
     border: none;
     border-radius: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 5rem;
 }
 
 .box1 {
-    width: 50vw;
-    height: 55vh;
+    width: 60%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 @keyframes box1img {
@@ -277,10 +408,12 @@ li.nav-item a:hover {
     will-change: transform;
     transition: transform 1s cubic-bezier(.17, .67, .83, .67);
     animation: box1img 1s 1;
-    width: 35vw;
-    height: 45vh;
-    border-radius: 20px;
-    box-shadow: 2px 2px 10px black;
+    animation-delay: 8s;
+    width: 90%;
+    height: 90%;
+    border-radius: 18px;
+    object-fit: cover;
+    /* box-shadow: 2px 2px 10px black; */
 }
 
 @keyframes box2 {
@@ -293,12 +426,24 @@ li.nav-item a:hover {
     }
 }
 
+div.linesec1 {
+    width: 15%;
+    margin-left: 2rem;
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+    height: 2px;
+    background-color: rgb(184, 150, 87);
+}
+
 .box2 {
     will-change: transform;
     transition: transform 1s cubic-bezier(.17, .67, .83, .67);
     animation: box2 1s 1;
-    width: 40vw;
-    height: 45vh;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .box2 h1 {
@@ -306,11 +451,8 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 45px;
-    width: 40%;
-    margin-left: 150px;
-    margin-top: 10px;
-
+    font-size: 4rem;
+    margin-left: 2rem;
 }
 
 .box2 h2 {
@@ -318,12 +460,11 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 2rem;
     width: 40%;
-    margin-left: 150px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: .8rem;
 }
 
 .box2 a {
@@ -333,25 +474,28 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-weight: 350;
-    font-style: normal;
     background-color: rgb(184, 150, 87);
-    margin-left: 150px;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    width: 40%;
+    font-size: 1.2rem;
     color: black;
     box-shadow: 2px 2px 10px black;
 }
 
-:is(.signmenu h1, .signmenu h2, .signmenu p) {
-    text-align: center;
-    margin-bottom: 25px;
+.signmenu {
+    width: 100%;
+    height: 30%;
 }
 
 .signmenu h1 {
-    font-size: 50px;
+    font-size: 4rem;
     font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .signmenu h2 {
@@ -359,120 +503,66 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
-}
-
-.signmenu p {
-    width: 15%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 350;
-    font-style: normal;
-    font-size: 18px;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 #section2 {
-    width: 100vw;
-    height: 100vh;
-    margin-bottom: 80px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 5rem;
 }
 
 .dishes {
     width: 100%;
-    height: 60vh;
+    height: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .dish {
-    width: 25%;
+    width: 20%;
     height: 100%;
     border: none;
-    border-radius: 18px;
     box-shadow: 2px 2px 10px black;
 }
 
 .dish h2 {
     text-align: center;
-    margin: 15px auto;
     font-family: "Cedarville Cursive", cursive;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .dish p {
     text-align: center;
-    margin: 15px auto;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
     font-family: 'Poppins', sans-serif;
     font-optical-sizing: auto;
     font-weight: 350;
     font-style: normal;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .dishimg {
     width: 100%;
-    height: 250px;
+    height: 55%;
     margin: auto;
 }
 
 .dishimg img {
     width: 100%;
-    height: 200px;
-    object-fit: fill;
-    border-radius: 15px;
-    box-shadow: 2px 2px 15px white;
-}
-
-#section3 {
-    height: 70vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-    /* background: url(../static/images/resimg.jpeg) no-repeat center center/cover; */
-}
-
-#section3 h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 45px;
-    width: 70%;
-    margin: auto;
-
-}
-
-.featuretext {
-    background: rgb(243, 232, 232);
-    border-radius: 15px;
-    width: 45%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.featureimg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
     height: 100%;
-}
-
-#section3 img {
-    width: 80%;
-    border-radius: 20px;
-    height: 90%;
-    box-shadow: 2px 2px 10px black;
+    object-fit: cover;
 }
 
 #section4 {
@@ -482,15 +572,18 @@ li.nav-item a:hover {
     align-items: center;
     background: rgb(243, 232, 232);
     width: 80%;
-    margin: auto;
-    height: 60vh;
-    margin-bottom: 30px;
+    height: 320px;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    margin-right: auto;
+    margin-left: auto;
+
 }
 
 #section4 h1 {
     text-align: center;
     margin: 0px auto;
-    font-size: 50px;
+    font-size: 4rem;
     font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -507,7 +600,7 @@ li.nav-item a:hover {
 
 .card {
     width: 25%;
-    height: 70%;
+    height: 100%;
     margin: auto;
 }
 
@@ -519,7 +612,7 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 350;
     font-style: normal;
-    font-size: 15px;
+    font-size: 1rem;
 }
 
 .card h2 {
@@ -531,11 +624,15 @@ li.nav-item a:hover {
 }
 
 #section5 {
-    width: 100%;
-    height: 100vh;
+    width: 60%;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .bigimg {
@@ -543,13 +640,13 @@ li.nav-item a:hover {
     align-items: center;
     justify-content: center;
     margin-right: 2px;
-    width: 40%;
-    height: 70%;
+    width: 70%;
+    height: 100%;
 }
 
 .smallimg {
-    width: 20%;
-    height: 70%;
+    width: 30%;
+    height: 100%;
 }
 
 .image img {
@@ -597,21 +694,21 @@ li.nav-item a:hover {
     align-items: center;
     flex-direction: column;
     width: 80%;
-    margin: 30px auto;
-    height: 40vh;
+    margin: auto;
+    height: 250px;
     background-color: rgb(243, 232, 232);
     border-radius: 10px;
 }
 
 #section6 h1 {
     color: black;
-    font-size: 50px;
+    font-size: 4rem;
     font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 #section6 h2 {
@@ -621,13 +718,13 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 350;
     font-style: normal;
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .reservetable {
     width: 20%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 #section6 a {
@@ -642,7 +739,7 @@ li.nav-item a:hover {
     background-color: #ACA191;
     width: 80%;
     margin: 50px auto;
-    height: 50vh;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -672,7 +769,7 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin: 20px auto;
+    margin: 1.5rem auto;
 }
 
 .rest p {
@@ -701,7 +798,7 @@ li.nav-item a:hover {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin: 20px auto;
+    margin: 1.5rem auto;
 }
 
 .links a {
@@ -753,7 +850,7 @@ li.nav-item a:hover {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 20%;
+    height: 10%;
 }
 
 .footer p {
@@ -768,75 +865,72 @@ li.nav-item a:hover {
    ========================================================= */
 
 @media screen and (max-width: 1024px) {
-    #navigation {
-         display: flex;
-        justify-content: center;
-        align-items: center;
+    html {
+        font-size: 10px;
+    }
+
+    .container1 {
         width: 100%;
-        max-width: 100%;
-        height: 10vh;
-        margin-bottom: 50px;
+        height: 1000%;
+    }
+
+    #herosection {
+        width: 100%;
+        height: 60%;
     }
 
     li.nav-item a {
-        font-size: 15px;
-    }
-    li.nav-item a::before {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: rgb(212, 179, 113);
-}
-    li.nav-item {
-        margin: auto;
+        font-size: 1.7rem;
     }
 
-    .logo {
-        width: 0;
-        height: 0;
+    ul {
+        width: 85%;
+        height: 8%;
     }
 
-    .logo img {
-        width: 0;
-        height: 0;
-    }
-    #navbar {
-         display: flex;
-        justify-content: center;
-        align-items: center;
+    #herosection::before {
+        content: '';
+        position: absolute;
+        top: 0;
         width: 100%;
-        margin-right: 25px;
-        float: none;
+        height: 100%;
+        opacity: 0;
+        animation: herosection 1s forwards;
+        animation-delay: 5s;
+        box-shadow: 0px -10px 10px 10px black;
+        border-bottom-left-radius: 5px;
+        will-change: transform;
     }
-    #navbar ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
+
+    @keyframes herosection {
+        to {
+            opacity: .8;
+        }
     }
+
     #section {
-        display: block;
+        width: 90%;
+        height: 92%;
+        margin-bottom: 1.5rem;
     }
 
     .hero {
-        width: 80%;
-        height: 400px;
+        width: 100%;
+        height: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
-        margin-bottom: 50px;
     }
+
     .hero h1 {
-        font-size: 35px;
-        width: 100%;
+        font-size: 4rem;
         text-align: center;
-        margin: 10px auto;
-        margin-top: 25px;
+        color: white;
     }
+
     .hero p {
+        color: white;
         text-align: center;
         font-size: 25px;
         width: 100%;
@@ -845,131 +939,172 @@ li.nav-item a:hover {
         margin-right: auto;
         margin-top: 0px;
     }
+
     .hero a {
         margin: 0;
     }
+
     .exploremenu {
         margin: 20px auto;
     }
+
     .exploremenu a {
         font-size: 25px;
     }
-    .heroimage {
-        width: 80%;
-        margin: 0px auto;
-        height: 250px;
-    }
-    #herosection {
-        height: auto;
-        margin-bottom: 100px;
-    }
 
-    .heroimage img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
     div.linehero {
         margin-bottom: 25px;
         margin-left: auto;
         margin-right: auto;
         width: 50%;
     }
+
     #section1 {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 80px;
-        margin-top: 0px;
-        height: 350px;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+        height: 200px;
         background-color: #fffdf5;
-        box-shadow: 2px 2px 8px black;
         border-radius: 15px;
+        animation: box 1s forwards;
+        animation-delay: 10s;
+        box-shadow: 0px 0px 0px black;
     }
+
+    @keyframes box {
+        to {
+            box-shadow: 1px 1px 5px black;
+        }
+    }
+
     .box1 {
-        width: 40%;
-        height: 250px;
+        width: 60%;
+        height: 95%;
         margin-right: 20px;
     }
+
     .box1 img {
         object-fit: cover;
         width: 100%;
         height: 100%;
+        animation: box1img 1s forwards;
+        animation-delay: 9s;
+        transform: translateX(-1000px);
+        transform-origin: left;
+        transition: transform;
+        will-change: transform;
     }
+    @keyframes box1img {
+        to {
+        transform: translateX(0);           
+    }
+}
     .box2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 45%;
-        height: 350px;
+        width: 40%;
+        height: 100%;
+        animation: box2 1s forwards;
+        animation-delay: 9s;
+        transform: translateX(1000px);
+        transform-origin: right;
+        transition: transform;
+        will-change: transform;
     }
+    @keyframes box2 {
+        to {
+            transform: translateX(0);
+        }
+    }
+
     .box2 h1 {
-        font-size: 35px;
-        margin-top: 30px;
+        font-size: 2rem;
         width: 100%;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
+
     .box2 h2 {
-        font-size: 25px;
+        font-size: 1.5rem;
         width: 70%;
-        margin: 15px auto;
-        margin-bottom: 20px;
     }
+
     .box2 a {
-        font-size: 15px;
-        margin: 10px 10px;
-        width: 150px;
+        font-size: 1rem;
+        margin: 10px auto;
+        width: 90%;
     }
+
     div.linesec1 {
-        margin-top: 10px;
-        margin-left: 0px;
-    margin-bottom: 30px;
-    width: 50%;
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+        width: 50%;
     }
+
     #section2 {
         width: 95%;
-        height: auto;
-        margin: 50px auto;
+        height: 200px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 8rem;
+        margin-top: 10rems;
+        animation: sec2 .1s forwards;
+        opacity: 0;
+        animation-delay: 10.5s;
     }
+    @keyframes sec2 {
+        to {
+            opacity: 1;
+        }   
+    }
+    .signmenu {
+    width: 100%;
+    height: 45%;
+}
     .signmenu h1 {
-        font-size: 40px;
+        font-size: 3rem;
     }
+
     .signmenu h2 {
-        font-size: 30px;
+        font-size: 2rem;
     }
+
     .dishes {
         width: 100%;
-        height: 250px;
+        height: 65%;
     }
-    .dish {
-        height: 220px;
-        width: 30%;
-    }
-    .dish h2 {
-        font-size: 25px;
 
-    }
-    .dish p {
-        font-size: 15px;
-    }
-    .dishimg {
-        height: 90px;
-    }
-    .dishimg img {
+    .dish {
         height: 100%;
+        width: 20%;
+        margin: auto;
     }
-    #section3 {
-        width: 95%;
-        height: 400px;
-        margin: 10px auto;
+
+    .dish h2 {
+        font-size: 2rem;
+        margin: auto;
     }
-    #section3 h1 {
-        font-size: 20px;
+
+    .dish p {
+        font-size: 1rem;
+        margin: auto;
     }
+
+    .dishimg {
+        height: 50%;
+        width: 100%;
+    }
+
+    .dishimg img {
+        object-fit: cover;
+    }
+
     .featuretext {
         display: flex;
         justify-content: center;
@@ -978,94 +1113,106 @@ li.nav-item a:hover {
         height: 200px;
         box-shadow: 2px 2px 8px black;
     }
-    .featuretext h1 {
-        margin: 20px;
-    }
-    .featureimg {
-        width: 65%;
-        height: 300px;
-    }
-    .featureimg img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+
     #section4 {
-        height: 400px;
+        height: 280px;
         width: 90%;
-        margin: 50px auto;
+        margin-top: 5rem;
+        margin-right: auto;
+        margin-left: auto;
     }
+
     #section4 h1 {
-        font-size: 30px;   
+        font-size: 30px;
         width: 75%;
         margin-top: 25px;
     }
+
     .card p {
-        font-size: 10px;
+        font-size: .8rem;
         margin: 10px auto;
     }
+
     .card h2 {
         font-size: 15px;
     }
+
     #section5 {
-        height: auto;
-        margin-bottom: 50px;
+        height: 200px;
+        margin-bottom: 5rem;
     }
-    .bigimg {
-        width: 60%;
-    }
-    .smallimg {
-        width: 30%;
-    }
+
     #section6 {
-        height: 350px;
+        height: 300px;
         padding-top: 30px;
     }
+
     #section6 h2 {
         font-size: 20px;
         width: 80%;
-        margin-top: 25px;
-        margin-bottom: 10px;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 1rem;
     }
+
     #section6 h1 {
         font-size: 35px;
+        margin-top: 2rem;
     }
+
     .reservetable {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
+
     .reservetable a {
         width: auto;
         height: auto;
         font-size: 15px;
     }
+
     #contact {
-        height: 300px;
+        height: 230px;
     }
+
     .contact {
-        height: 330px;
+        height: 90%;
     }
+
     .rest h2 {
-        font-size: 20px;
+        font-size: 1.2rem;
+        text-align: center;
     }
-    .rest p{
-        font-size: 10px;
+
+    .rest p {
+        font-size: 1rem;
+        text-align: center;
     }
-    .links h2  {
-        font-size: 20px;
+
+    .links h2 {
+        font-size: 1.5rem;
+        text-align: center;
     }
+
     .links p {
-        font-size: 10px;
+        font-size: 1rem;
+        text-align: center;
     }
+
     .findus p {
-        font-size: 10px;
+        font-size: 1rem;
+        text-align: center;
     }
+
     .findus h2 {
-        font-size: 20px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .footer {
+        margin-bottom: 2rem;
     }
 }
