@@ -11,11 +11,12 @@ html {
     font-size: 15px;
     max-width: 100vw;
 }
+
 body {
     overflow-x: hidden;
 }
+
 .container1 {
-    background-color: rgb(248, 247, 244);
     width: 100%;
     height: 100vh;
     position: relative;
@@ -26,16 +27,14 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background: url(/static/images/contimg4.jpg) no-repeat center center/cover;
+    background: url(https://static.vecteezy.com/system/resources/previews/022/393/030/non_2x/interior-of-a-restaurant-ai-generated-free-photo.jpg) no-repeat center center/cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
     animation: herosection 1s forwards;
-    animation-delay: 9s;
-    box-shadow: 0px -10px 10px 10px black;
-    border-bottom-left-radius: 5px;
+    animation-delay: 4s;
     will-change: transform;
 }
 
@@ -111,7 +110,7 @@ li#menu a::before {
     animation-delay: 4.3s;
     transition: transform;
     will-change: transform;
-    transform: translateX(-1000px);
+    transform: translateX(-1200px);
 }
 
 @keyframes menua {
@@ -132,10 +131,31 @@ li#navcontact a::before {
     animation-delay: 4.6s;
     transition: transform;
     will-change: transform;
-    transform: translateX(-1000px);
+    transform: translateX(-1500px);
 }
 
 @keyframes navcontact {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#services a::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    animation: navservices .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 4.6s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-1500px);
+}
+
+@keyframes navservices {
     to {
         transform: translateX(0);
     }
@@ -145,12 +165,10 @@ li#navcontact a::before {
     animation: left .3s forwards;
     } */
 ul {
-    width: 50%;
+    width: 100%;
     background: rgb(212, 179, 113);
     backdrop-filter: blur(5px);
     border: 1px solid rgb(212, 179, 113);
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
     box-shadow: 2px 2px 10px black;
     margin: auto;
     display: flex;
@@ -161,6 +179,9 @@ ul {
     transition: transform;
     will-change: transform;
     transform: translateY(-100px);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 @keyframes nav {
@@ -221,10 +242,24 @@ li#navcontact {
     animation-delay: 3.4s;
     transition: transform;
     will-change: transform;
-    transform: translateX(-1000px);
+    transform: translateX(-1500px);
 }
 
 @keyframes navcontact {
+    to {
+        transform: translateX(0);
+    }
+}
+
+li#services {
+    animation: navservices .3s cubic-bezier(.17, .67, .83, .67) forwards;
+    animation-delay: 3.4s;
+    transition: transform;
+    will-change: transform;
+    transform: translateX(-1000px);
+}
+
+@keyframes navservices {
     to {
         transform: translateX(0);
     }
@@ -262,8 +297,8 @@ li.nav-item a {
 }
 
 #section {
-    width: 50%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     margin-bottom: 1.5rem;
 }
 
@@ -279,9 +314,8 @@ li.nav-item a {
 
 div.linehero {
     width: 15%;
-    margin-left: 3rem;
     margin-top: .8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     height: 2px;
     background-color: rgb(184, 150, 87);
     animation: heroline .5s cubic-bezier(.17, .67, .83, .67) forwards;
@@ -297,14 +331,13 @@ div.linehero {
 }
 
 .hero h1 {
-    color: black;
+    color: white;
     font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: bold;
     font-style: normal;
     font-size: 4.5rem;
-    margin-top: .5rem;
-    margin-left: 3rem;
+    margin-top: 0rem;
     animation: typing 2s steps(17) forwards;
     animation-delay: 6.5s;
     width: 0;
@@ -321,14 +354,13 @@ div.linehero {
 
 .hero p {
     text-align: center;
-    color: black;
+    color: white;
     font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
-    margin-left: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     width: 50%;
     animation: p .5s cubic-bezier(.17, .67, .83, .67) forwards;
     animation-delay: 5.5s;
@@ -373,22 +405,23 @@ div.linehero {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    height: 400px;
-    box-shadow: 1px 1px 5px black;
-    margin: auto;
+    width: 100%;
+    height: 600px;
     border: none;
     border-radius: 10px;
     margin-bottom: 5rem;
+    margin-top: 8rem;
+    background-color: rgb(248, 247, 244);
 }
 
 .box1 {
     width: 60%;
-    height: 100%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 @keyframes box1img {
@@ -406,11 +439,9 @@ div.linehero {
     transition: transform 1s cubic-bezier(.17, .67, .83, .67);
     animation: box1img 1s 1;
     animation-delay: 8s;
-    width: 90%;
-    height: 90%;
-    border-radius: 18px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    /* box-shadow: 2px 2px 10px black; */
 }
 
 @keyframes box2 {
@@ -437,10 +468,13 @@ div.linesec1 {
     transition: transform 1s cubic-bezier(.17, .67, .83, .67);
     animation: box2 1s 1;
     width: 40%;
-    height: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 3rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .box2 h1 {
@@ -508,7 +542,7 @@ div.linesec1 {
 #section2 {
     width: 100%;
     height: 500px;
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
 }
 
 .dishes {
@@ -519,8 +553,23 @@ div.linesec1 {
     align-items: center;
 }
 
+.service1 {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.service2 {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
 .dish {
-    width: 20%;
+    width: 45%;
+    margin: auto;
     height: 100%;
     border: none;
     box-shadow: 2px 2px 10px black;
@@ -533,14 +582,14 @@ div.linesec1 {
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
     margin-right: auto;
     margin-left: auto;
 }
 
 .dish p {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0rem;
     margin-right: auto;
     margin-left: auto;
     font-family: 'Poppins', sans-serif;
@@ -552,7 +601,7 @@ div.linesec1 {
 
 .dishimg {
     width: 100%;
-    height: 55%;
+    height: 70%;
     margin: auto;
 }
 
@@ -865,12 +914,12 @@ div.linesec1 {
     html {
         font-size: 10px;
         height: auto;
-    min-height: 100vh;
+        min-height: 100vh;
     }
 
     body {
-    margin: 0;
-    overflow-x: hidden;
+        margin: 0;
+        overflow-x: hidden;
     }
 
     .container1 {
@@ -997,11 +1046,13 @@ div.linesec1 {
         transition: transform;
         will-change: transform;
     }
+
     @keyframes box1img {
         to {
-        transform: translateX(0);           
+            transform: translateX(0);
+        }
     }
-}
+
     .box2 {
         display: flex;
         flex-direction: column;
@@ -1015,6 +1066,7 @@ div.linesec1 {
         transition: transform;
         will-change: transform;
     }
+
     @keyframes box2 {
         to {
             transform: translateX(0);
@@ -1047,25 +1099,28 @@ div.linesec1 {
     }
 
     #section2 {
-        width: 95%;
-        height: 200px;
+        width: 100%;
+        height: 500px;
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 8rem;
         margin-top: 10rems;
         animation: sec2 .1s forwards;
         opacity: 0;
-        animation-delay: 10.5s;
+        animation-dela: 10.5s;
     }
+
     @keyframes sec2 {
         to {
             opacity: 1;
-        }   
+        }
     }
+
     .signmenu {
-    width: 100%;
-    height: 45%;
-}
+        width: 100%;
+        height: 25%;
+    }
+
     .signmenu h1 {
         font-size: 3rem;
     }
@@ -1075,33 +1130,42 @@ div.linesec1 {
     }
 
     .dishes {
+        display: block;
         width: 100%;
-        height: 65%;
+        height: 75%;
     }
 
-    .dish {
-        height: 100%;
-        width: 20%;
+    .service1 {
+        display: flex;
+        width: 100%;
+        height: 45%;
+        margin-bottom: 2rem;
+    }
+
+    .service2 {
+        display: flex;
+        width: 100%;
+        height: 45%;
         margin: auto;
+    }
+    .dish {
+        margin: auto;
+         width: 45%;
+        height: 100%;
     }
 
     .dish h2 {
         font-size: 2rem;
-        margin: auto;
+        margin-top: .5rem;
+        display: inline;
+        margin-left: 2rem;
+        margin-right: 3rem;
     }
 
     .dish p {
         font-size: 1rem;
-        margin: auto;
-    }
-
-    .dishimg {
-        height: 50%;
-        width: 100%;
-    }
-
-    .dishimg img {
-        object-fit: cover;
+        margin-top: .5rem;
+        display: inline;
     }
 
     .featuretext {
@@ -1211,6 +1275,7 @@ div.linesec1 {
         font-size: 1.5rem;
         text-align: center;
     }
+
     .footer {
         margin-bottom: 2rem;
     }
